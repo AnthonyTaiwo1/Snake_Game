@@ -89,7 +89,11 @@ win.listen()
 win.onkeypress(go_up, "w")  
 win.onkeypress(go_down, "s")  
 win.onkeypress(go_right, "d")  
-win.onkeypress(go_left, "a")     
+win.onkeypress(go_left, "a") 
+win.onkeypress(go_up, "Up")  
+win.onkeypress(go_down, "Down")  
+win.onkeypress(go_right, "Right")  
+win.onkeypress(go_left, "Left")    
    
 #main game loop
 while True:
@@ -100,6 +104,7 @@ while True:
         time.sleep(1)
         head.goto(0,0)
         head.direction= "stop"
+        winsound.PlaySound("smashing.wav",True)
 
         # Hide the bodyparts
         for bodypart in bodyparts:
@@ -123,6 +128,7 @@ while True:
         x = random.randint(-290,290)
         y = random.randint(-290,290)
         food.goto(x,y)
+        winsound.PlaySound("bounce.wav",True)
 
 
         # Add a bodypart
@@ -169,6 +175,7 @@ while True:
             time.sleep(1)
             head.goto(0,0)
             head.direction = "stop"
+            winsound.PlaySound("smashing.wav",True)
             # Hide the bodyparts
             for bodypart in bodyparts:
                 bodypart.goto(1000, 1000)
